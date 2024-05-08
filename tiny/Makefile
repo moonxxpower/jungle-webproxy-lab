@@ -5,10 +5,13 @@ CFLAGS = -O2 -Wall -I .
 # Others systems will probably require something different.
 LIB = -lpthread
 
-all: tiny cgi
+all: tiny tiny_homework cgi
 
 tiny: tiny.c csapp.o
 	$(CC) $(CFLAGS) -o tiny tiny.c csapp.o $(LIB)
+
+tiny_homework: tiny_homework.c csapp.o
+	$(CC) $(CFLAGS) -o tiny_homework tiny_homework.c csapp.o $(LIB)
 
 csapp.o: csapp.c
 	$(CC) $(CFLAGS) -c csapp.c
